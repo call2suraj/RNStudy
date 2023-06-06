@@ -2,6 +2,7 @@
 export const increment = () => {
     return{
         type: 'INCREMENT',
+       
     }  
 }
 
@@ -12,8 +13,10 @@ export const decrement = () => {
     }
 }
 
-export function incrementAsync() {
+export function incrementAsync(data) {
+    // console.log(data)
     return {
-      type: 'INCREMENT_ASYNC'
+      type: 'INCREMENT_ASYNC',
+      extraData: data
     };
   }

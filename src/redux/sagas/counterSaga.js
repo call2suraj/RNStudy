@@ -2,10 +2,11 @@
 import { delay, takeEvery, takeLatest, put } from 'redux-saga/effects';
 
 // Increase Counter Async
-function* increaseCounterAsync() {
+function* increaseCounterAsync(action) {
   try {
     // Delay 500 miliSeconds
     // yield delay(500);
+    console.log("extraData",action.extraData)
   
     // Dispatch Action To Redux Store
     yield put({ 
