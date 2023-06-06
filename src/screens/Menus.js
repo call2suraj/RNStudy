@@ -4,10 +4,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-function DetailsScreen() {
+import CounterScreen from '../screens/CounterScreen';
+
+function DetailsScreen(props) {
+   const { state} = props.navigation;
+      console.log("PROPS", props.route.params);
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Details!</Text>
+      <Text>Details! {props.route.params.user}</Text>
     </View>
   );
 }
@@ -16,9 +20,11 @@ function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Home screen</Text>
+
+      <CounterScreen />
       <Button
         title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => navigation.navigate('Details',{ user: 'Lucy' })}
       />
     </View>
   );
