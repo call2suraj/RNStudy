@@ -11,18 +11,18 @@ function DetailsScreen(props) {
       console.log("PROPS", props.route.params);
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Details! {props.route.params.user}</Text>
+      <Text>Details! {props?.route?.params?.user}</Text>
     </View>
   );
 }
 
 function HomeScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flexDirection:'column', height: 200,}}>
       <Text>Home screen</Text>
 
       <CounterScreen />
-      <Button
+      <Button style={{margin: 55, padding: 10, width: 80}}
         title="Go to Details"
         onPress={() => navigation.navigate('Details',{ user: 'Lucy' })}
       />
