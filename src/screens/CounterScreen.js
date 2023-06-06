@@ -23,7 +23,7 @@ class CounterScreen extends React.Component {
 
         {/* action to saga call example */}
         <View style={styles.counterContainer}>
-          <TouchableOpacity onPress={() => actions.incrementAsync({extraData:'my extr data'})}>
+          <TouchableOpacity onPress={() => actions.incrementAsync({data:'my extr data'})}>
             <Text style={styles.buttonText}>+</Text>
           </TouchableOpacity>
 
