@@ -1,1 +1,1 @@
-# RNBoilerPlate
+# RNStudy
