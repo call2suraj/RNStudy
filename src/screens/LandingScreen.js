@@ -4,7 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import CounterScreen from '../screens/CounterScreen';
+import CounterScreen from './CounterScreen';
+import JavaScriptScreen from './JavaScriptScreen';
 
 function DetailsScreen(props) {
    const { state} = props.navigation;
@@ -64,9 +65,18 @@ function SettingsStackScreen() {
   );
 }
 
+function JavaScriptStackScreen() {
+  return (
+    <SettingsStack.Navigator>
+      <SettingsStack.Screen name="JavaScript" component={JavaScriptScreen} />
+      <SettingsStack.Screen name="Details" component={DetailsScreen} />
+    </SettingsStack.Navigator>
+  );
+}
+
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+export default function LandingScreen() {
   return (
     <NavigationContainer>
       <Tab.Navigator 
@@ -81,6 +91,8 @@ export default function App() {
               : 'home-outline';
           } else if (route.name === 'Settings') {
             iconName = focused ? 'ios-settings' : 'ios-settings-outline';
+          } else if (route.name === 'JavaScript') {
+            iconName = focused ? 'logo-javascript' : 'logo-javascript';
           }
 
           // You can return any component that you like here!
@@ -92,6 +104,7 @@ export default function App() {
       })}
       >
         <Tab.Screen name="Home" component={HomeStackScreen} />
+        <Tab.Screen name="JavaScript" component={JavaScriptStackScreen} />
         <Tab.Screen name="Settings" component={SettingsStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>

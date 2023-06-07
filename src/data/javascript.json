@@ -1,0 +1,15 @@
+{
+    "javascript": {
+        "questions": [
+            {
+                "question": "Some question",
+                "answers": ["something", "something", "something"],
+                "images": ""
+            },
+            {
+                "question": "Some question 2",
+                "answers": ["something", "something", "something"],
+            }
+        ]
+    }
+}
