@@ -40,7 +40,7 @@ class CounterScreen extends React.Component {
 
 // Map State To Props (Redux Store Passes State To Component)
 const mapStateToProps = (state) => {
-  console.log(state);
+  // console.log(state);
   // Redux Store --> Component
   return {
     counter: state.counter.counter,

@@ -1,5 +1,5 @@
 // Imports: Dependencies
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools, devToolsEnhancer } from 'redux-devtools-extension';
 
@@ -11,11 +11,11 @@ import { rootSaga } from '../sagas/index';
 
 // Middleware: Redux Saga
 const sagaMiddleware = createSagaMiddleware();
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // Redux: Store
 const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(
+  rootReducer, {},
+  composeWithDevTools(applyMiddleware(
     sagaMiddleware
   ))
 );
